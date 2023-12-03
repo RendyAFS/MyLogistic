@@ -5,12 +5,18 @@
 
     <section class="home">
         <div class="text">Beranda</div>
-        <div id="reader" width="600px"></div>
-        <input type="text" value="">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-10">
+                    <div id="reader" width="600px"></div>
+                    <input type="text" value="">
+                </div>
+            </div>
+        </div>
     </section>
 
 
-    
+
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
@@ -37,3 +43,6 @@
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>
 @endsection
+@push('scripts')
+    <script type="module"></script>
+@endpush
