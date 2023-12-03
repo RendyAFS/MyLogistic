@@ -25,6 +25,7 @@ body {
     min-height: 100vh;
     /* background-color: var(--body-color); */
     transition: var(--tran-05);
+    background-color: var(--body-color);
 }
 
 ::selection {
@@ -93,11 +94,13 @@ body.dark {
     font-size: 17px;
     font-weight: 500;
     white-space: nowrap;
+    /* visibility: visible; */
     opacity: 1;
 }
 
 .sidebar.close .text {
     opacity: 0;
+    /* visibility: hidden; */
 }
 
 /* =========================== */
@@ -203,7 +206,7 @@ body.dark .sidebar li a:hover .text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .menu-bar::-webkit-scrollbar {
@@ -222,9 +225,9 @@ body.dark .switch::before {
     top: 0;
     top: 0;
     left: 250px;
-    height: 100vh;
+    /* height: 100vh; */
     width: calc(100% - 250px);
-    background-color: #F8F9FA;
+    background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
@@ -263,6 +266,33 @@ body.dark .home .text {
 }
 
 
+.menu-hp{
+    visibility: hidden;
+    margin-left: -50px;
+}
+
+.btn-offcanvas{
+    background-color:var(--body-color);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+.btn-offcanvas:hover{
+    background-color: var(--primary-color);
+    color:var(--body-color);
+    border-radius: 8px;
+}
+.btn-offcanvas a{
+    background-color:var(--body-color);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+.btn-offcanvas a:hover{
+    background-color: var(--primary-color);
+    color:var(--body-color);
+    border-radius: 8px;
+}
 
 
 /* mediaquery */
@@ -271,8 +301,27 @@ body.dark .home .text {
         display: none;
     }
 
-    .c_dosen{
-        width: 100%;
+    .sidebar {
+        display: none; /* Untuk menyembunyikan sidebar/navbar */
     }
-    
+
+    .home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Mengatur lebar section menjadi penuh */
+    }
+
+    .c_dosen {
+        width: 100%; /* Jika diperlukan, atur lebar elemen lain menjadi penuh */
+    }
+    .sidebar.close~.home {
+        left: 0px;
+        height: 100vh;
+        width: calc(100% - 0px);
+    }
+
+    .menu-hp{
+        visibility: visible;
+    }
 }

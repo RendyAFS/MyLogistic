@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ScanController extends Controller
 {
@@ -27,7 +29,17 @@ class ScanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $activities = new Activity();
+        $activities->nama_dosen = $request->nama_dosen;
+        $activities->nama_handbag = $request->nama_handbag;
+
+
+        // Simpan objek Mahal ke dalam database
+        $activities->save();
+        Alert::success('Berhasil Menambahkan', 'Data Peminjaman Handbag Berhasil Terinput.');
+
+        // Redirect ke halaman yang sesuai setelah penyimpanan data
+        return redirect()->back();
     }
 
     /**

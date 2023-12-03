@@ -9,6 +9,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="d-flex justify-content-center mb-4">
+                        <img src="" alt="">
                         {!! QrCode::encoding('ISO-8859-1')->size(220)->generate($handbags->qr_handbag) !!}
 
                     </div>
