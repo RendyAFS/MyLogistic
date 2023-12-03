@@ -25,14 +25,14 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="{{route('lectures.index')}}">
+                    <a href="{{ route('lectures.index') }}">
                         <i class="bi bi-person-check icon"></i>
-                        <span class="text nav-text">Lectures</span>
+                        <span class="text nav-text">Dosen</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                    <a href="{{route('handbags.index')}}">
+                    <a href="{{ route('handbags.index') }}">
                         <i class="bi bi-bag icon"></i>
                         <span class="text nav-text">Handbag</span>
                     </a>
@@ -42,7 +42,8 @@
 
         <div class="bottom-content">
             <li class="">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">Logout</span>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -53,3 +54,5 @@
         </div>
     </div>
 </nav>
+
+

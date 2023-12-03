@@ -11,7 +11,7 @@ class ScanController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.scan');
     }
 
     /**

@@ -28,9 +28,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route Lecture
 Route::resource('handbags', HandbagController::class);
+Route::get('gettabelhandbag', [HandbagController::class, 'getData'])->name('handbags.getData');
+
 
 // Route Lecture
 Route::resource('lectures', LectureController::class);
+Route::get('gettabeldosen', [LectureController::class, 'getData'])->name('lectures.getData');
+
+
 
 
 // Route User
