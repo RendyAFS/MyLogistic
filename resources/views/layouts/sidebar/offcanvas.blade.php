@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+<div class="offcanvas ku offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
         <a class="navbar-brand d-flex flex-row" href="{{ url('/') }}">

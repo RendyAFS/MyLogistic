@@ -94,13 +94,15 @@ body.dark {
     font-size: 17px;
     font-weight: 500;
     white-space: nowrap;
-    /* visibility: visible; */
-    opacity: 1;
+    visibility: visible;
+    max-height: 100px; /* Atur sesuai dengan ketinggian teks Anda */
+    overflow: hidden; /* Untuk menyembunyikan konten ketika keadaan hidden */
+    transition: max-height 0.3s ease; /* Menambahkan transisi untuk max-height */
 }
 
 .sidebar.close .text {
-    opacity: 0;
-    /* visibility: hidden; */
+    max-height: 0; /* Atur ke 0 untuk menyembunyikan konten */
+    transition: max-height 0.3s ease; /* Menambahkan transisi untuk max-height */
 }
 
 /* =========================== */
@@ -126,7 +128,7 @@ header .image-text .name {
 }
 
 header .image-text .collage {
-    font-size: 12px;
+    font-size: 11px;
     margin-top: -2px;
     display: block;
 }
@@ -240,9 +242,9 @@ body.dark .switch::before {
 }
 
 .sidebar.close~.home {
-    left: 78px;
+    left: 85px;
     height: 100vh;
-    width: calc(100% - 78px);
+    width: calc(100% - 85px);
 }
 
 body.dark .home .text {
@@ -271,6 +273,10 @@ body.dark .home .text {
     margin-left: -50px;
 }
 
+.offcanvas.ku{
+    width: 85%;
+}
+
 .btn-offcanvas{
     background-color:var(--body-color);
     color: var(--text-color);
@@ -295,8 +301,27 @@ body.dark .home .text {
 }
 
 
+.title-scan{
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+    border-radius: 8px;
+}
+
+.d-peminjaman{
+    border-left: var(--primary-color) solid 6px;
+}
+
+
+.btn-accent{
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+}
+.btn-accent:hover{
+    color: var(--sidebar-color);
+    background-color: #750505;
+}
 /* mediaquery */
-@media (max-width: 420px) {
+@media (max-width: 431px) {
     .sidebar #btn {
         display: none;
     }
