@@ -25,6 +25,7 @@ body {
     min-height: 100vh;
     /* background-color: var(--body-color); */
     transition: var(--tran-05);
+    background-color: var(--body-color);
 }
 
 ::selection {
@@ -93,11 +94,15 @@ body.dark {
     font-size: 17px;
     font-weight: 500;
     white-space: nowrap;
-    opacity: 1;
+    visibility: visible;
+    max-height: 100px; /* Atur sesuai dengan ketinggian teks Anda */
+    overflow: hidden; /* Untuk menyembunyikan konten ketika keadaan hidden */
+    transition: max-height 0.3s ease; /* Menambahkan transisi untuk max-height */
 }
 
 .sidebar.close .text {
-    opacity: 0;
+    max-height: 0; /* Atur ke 0 untuk menyembunyikan konten */
+    transition: max-height 0.3s ease; /* Menambahkan transisi untuk max-height */
 }
 
 /* =========================== */
@@ -123,7 +128,7 @@ header .image-text .name {
 }
 
 header .image-text .collage {
-    font-size: 12px;
+    font-size: 11px;
     margin-top: -2px;
     display: block;
 }
@@ -203,7 +208,7 @@ body.dark .sidebar li a:hover .text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .menu-bar::-webkit-scrollbar {
@@ -222,9 +227,9 @@ body.dark .switch::before {
     top: 0;
     top: 0;
     left: 250px;
-    height: 100vh;
+    /* height: 100vh; */
     width: calc(100% - 250px);
-    background-color: #F8F9FA;
+    background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
@@ -237,9 +242,9 @@ body.dark .switch::before {
 }
 
 .sidebar.close~.home {
-    left: 78px;
+    left: 85px;
     height: 100vh;
-    width: calc(100% - 78px);
+    width: calc(100% - 85px);
 }
 
 body.dark .home .text {
@@ -263,16 +268,85 @@ body.dark .home .text {
 }
 
 
+.menu-hp{
+    visibility: hidden;
+    margin-left: -50px;
+}
+
+.offcanvas.ku{
+    width: 85%;
+}
+
+.btn-offcanvas{
+    background-color:var(--body-color);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+.btn-offcanvas:hover{
+    background-color: var(--primary-color);
+    color:var(--body-color);
+    border-radius: 8px;
+}
+.btn-offcanvas a{
+    background-color:var(--body-color);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+.btn-offcanvas a:hover{
+    background-color: var(--primary-color);
+    color:var(--body-color);
+    border-radius: 8px;
+}
 
 
+.title-scan{
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+    border-radius: 8px;
+}
+
+.d-peminjaman{
+    border-left: var(--primary-color) solid 6px;
+}
+
+
+.btn-accent{
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+}
+.btn-accent:hover{
+    color: var(--sidebar-color);
+    background-color: #750505;
+}
 /* mediaquery */
-@media (max-width: 420px) {
+@media (max-width: 431px) {
     .sidebar #btn {
         display: none;
     }
 
-    .c_dosen{
-        width: 100%;
+    .sidebar {
+        display: none; /* Untuk menyembunyikan sidebar/navbar */
     }
-    
+
+    .home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Mengatur lebar section menjadi penuh */
+    }
+
+    .c_dosen {
+        width: 100%; /* Jika diperlukan, atur lebar elemen lain menjadi penuh */
+    }
+    .sidebar.close~.home {
+        left: 0px;
+        height: 100vh;
+        width: calc(100% - 0px);
+    }
+
+    .menu-hp{
+        visibility: visible;
+    }
 }

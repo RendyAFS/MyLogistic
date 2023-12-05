@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HandbagController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LectureController;
 use App\Http\Controllers\ScanController;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,10 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/getData', [HomeController::class, 'getData']);
+
 
 // Route Lecture
 Route::resource('handbags', HandbagController::class);

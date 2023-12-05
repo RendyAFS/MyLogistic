@@ -4,7 +4,15 @@
     @include('layouts.sidebar.sidebar')
 
     <section class="home">
-        <div class="text">Halaman Dosen</div>
+        @include('layouts.sidebar.offcanvas')
+        <div class="text">
+            {{-- Menu Hp --}}
+            <a class="menu-hp text-decoration-none text-white" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+                aria-controls="staticBackdrop">
+                <i class="bi bi-list"></i>
+            </a>
+            Halaman Dosen
+        </div>
 
         <div class="container mt-5">
             <div class="row">
@@ -54,7 +62,7 @@
                 serverSide: true,
                 processing: true,
                 ajax: "gettabeldosen",
-                pagingType: 'simple_numbers',
+                pagingType: 'simple',
                 responsive: true,
                 columns: [{
                         data: "id",

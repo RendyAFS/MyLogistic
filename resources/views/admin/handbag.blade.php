@@ -4,7 +4,15 @@
     @include('layouts.sidebar.sidebar')
 
     <section class="home">
-        <div class="text">Halaman Handbag</div>
+        @include('layouts.sidebar.offcanvas')
+        <div class="text">
+            {{-- Menu Hp --}}
+            <a class="menu-hp text-decoration-none text-white" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+                aria-controls="staticBackdrop">
+                <i class="bi bi-list"></i>
+            </a>
+            Halaman Handbag
+        </div>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-4">
@@ -21,7 +29,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button class="btn btn-success shadow w-25 ">Tambah</button>
+                                    <button class="btn btn-success shadow w-md-25 ">Tambah</button>
                                 </div>
                             </div>
                         </form>
@@ -53,7 +61,7 @@
                 serverSide: true,
                 processing: true,
                 ajax: "gettabelhandbag",
-                pagingType: 'simple_numbers',
+                pagingType: 'simple',
                 responsive: true,
                 columns: [{
                         data: "id",

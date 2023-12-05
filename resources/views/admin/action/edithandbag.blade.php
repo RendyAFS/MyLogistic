@@ -4,11 +4,20 @@
     @include('layouts.sidebar.sidebar')
 
     <section class="home">
-        <div class="text">Detail Handbag</div>
+        @include('layouts.sidebar.offcanvas')
+        <div class="text">
+            {{-- Menu Hp --}}
+            <a class="menu-hp text-decoration-none text-white" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+                aria-controls="staticBackdrop">
+                <i class="bi bi-list"></i>
+            </a>
+            Detail Handbag
+        </div>
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="d-flex justify-content-center mb-4">
+                        <img src="" alt="">
                         {!! QrCode::encoding('ISO-8859-1')->size(220)->generate($handbags->qr_handbag) !!}
 
                     </div>

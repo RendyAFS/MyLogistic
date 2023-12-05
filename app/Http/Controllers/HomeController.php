@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Handbag;
+use App\Models\Lecture;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $handbags = Handbag::all();
+        $lectures = Lecture::all();
+        $activities = Activity::all();
+        return view('admin.home', compact('handbags', 'lectures', 'activities'));
+    }
+
+    public function getData(Request $request)
+    {
+
+        $activities = Activity::all();
+
+        if ($request->ajax()) {
+            return datatables()->of($activities)
+                ->addIndexColumn()
+                ->toJson();
+        }
     }
 }
